@@ -25,6 +25,11 @@
 # error "Invalid unequal lengths of ML-KEM shared secret and random inputs"
 #endif
 
+#define STRINGIFY2(x) #x
+#define STRINGIFY(x) STRINGIFY2(x)
+#pragma message("UINT_MAX expanded to: " STRINGIFY(UINT_MAX))
+#pragma message("UINT32_MAX expanded to: " STRINGIFY(UINT32_MAX))
+
 #if UINT_MAX < UINT32_MAX
 # error "Unsupported compiler: sizeof(unsigned int) < sizeof(uint32_t)"
 #endif
